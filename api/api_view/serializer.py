@@ -12,8 +12,8 @@ class ProductsSerializer(serializers.Serializer):
     
     def update(self, instance, data):
         instance.category_id = data.get('category_id', instance.category_id)
-        instance.product_name = data.get('product_name', instance.product_name)
-        instance.product_details = data.get('product_details', instance.product_details)
+        instance.name = data.get('name', instance.name)
+        instance.description = data.get('description', instance.description)
         
         instance.save()
         return instance
