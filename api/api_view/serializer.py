@@ -8,6 +8,7 @@ class ProductsSerializer(serializers.Serializer):
     name = serializers.CharField()
     description = serializers.CharField()
     price = serializers.IntegerField()
+    sku = serializers.IntegerField()
     
     
     def create(self, data):
@@ -19,6 +20,7 @@ class ProductsSerializer(serializers.Serializer):
         instance.description = data.get('description', instance.description)
         instance.quantity = data.get('quantity', instance.quantity)
         instance.price = data.get('price', instance.price)
+        instance.sku = data.get('sku', instance.sku)
         
         instance.save()
         return instance
