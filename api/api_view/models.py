@@ -17,4 +17,11 @@ class product_category(models.Model):
     
     def _str_(self):
         return self.category_id
+class promotion(models.Model):
+    name = models.CharField(max_length=400)
+    description = models.CharField(max_length=400)
+    start_date = models.DateTimeField(null=True)
+    end_date = models.DateTimeField(null=True)
     
+    def _str_(self):
+        return self.name
